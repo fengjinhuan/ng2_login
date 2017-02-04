@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="login-box">
+        <form (onSubmit)="onSubmit()" #fjh="ngForm" novalidate>
+            <div class="user">
+                <label for="name">用户名:</label>
+                <input type="text" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+            </div>
+            <span [hidden]="name.valid">
+                名字无效
+            </span>
+            <div class="password">
+                <label for="pass">密码:</label>
+                <input type="password" id="pass" required [(ngModel)]="model.pass" name="pass" #pass="ngModel">
+            </div>
+            <span [hidden]="pass.valid">
+                密码无效
+            </span>
+            <button [disabled]="!fjh.form.valid">登录</button>
+        </form>
+    </div>
+</div>
